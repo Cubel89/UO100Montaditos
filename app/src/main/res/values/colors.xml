@@ -1,6 +1,6 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <item name="color_primary" type="color">#FFC107</item>
-    <item name="color_primary_dark" type="color">#FF6F00</item>
+    <item name="color_primary_dark" type="color">#FFB300</item>
     <item name="color_accent" type="color">#4506FF</item>
 </resources>
