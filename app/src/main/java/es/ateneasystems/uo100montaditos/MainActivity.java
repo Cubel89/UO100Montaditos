@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
         ndList = (ListView)findViewById(R.id.navdrawerlist);
 
-        final String[] opciones = new String[]{"Sección 1", "Sección 2", "Sección 3"};
+        final String[] opciones = new String[]{"Carta", "Promos"};
+
 
         ArrayAdapter<String> ndMenuAdapter =
                 new ArrayAdapter<>(this,

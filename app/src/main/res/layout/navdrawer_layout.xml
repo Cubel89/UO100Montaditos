@@ -20,18 +20,45 @@
         android:background="@android:color/white"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/navheader"
             android:scaleType="centerCrop" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/txt_nombre"
+                android:layout_marginStart="22dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="42dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/txt_email"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/txt_nombre"
+                android:layout_marginBottom="19dp" />
+
+        </RelativeLayout>
         <ListView
             android:id="@+id/navdrawerlist"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:divider="@null"
-            android:choiceMode="singleChoice" />
+            android:choiceMode="singleChoice"
+            android:background="@color/color_primary_light" />
 
     </LinearLayout>
 

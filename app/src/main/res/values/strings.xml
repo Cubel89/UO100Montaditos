@@ -5,4 +5,9 @@
     <string name="action_settings">Settings</string>
     <string name="openDrawer">Abierto</string>
     <string name="closeDrawer">Cerrado</string>
+    <string name="title_Saludo">UO - Montaditos</string>
+    <string name="title_Sub_Saludo">Una APP de AteneaSystems</string>
+    <string name="tv_EMPTY">--</string>
+    <string name="text_Nombre_Empresa">AteneaSystems</string>
+    <string name="text_Web_Empresa">www.ateneasystems.es</string>
 </resources>
