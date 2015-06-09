@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:clickable="true"
     tools:context=".MainActivity"
@@ -90,7 +91,7 @@
                 android:textColor="@color/Negro_Puro"
                 android:text="@string/text_Web_Empresa" />
 
-            <!--
+
             <com.google.android.gms.ads.AdView
                 android:layout_marginTop="22dp"
                 android:id="@+id/ad_view"
@@ -101,7 +102,7 @@
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_ad_unit_miID" />
 
-                -->
+
         </LinearLayout>
         </FrameLayout>
 </LinearLayout>
