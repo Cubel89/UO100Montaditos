@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,9 +20,16 @@ import android.widget.ListView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import es.ateneasystems.uo100montaditos.fragments.Fragment1;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+
+import es.ateneasystems.uo100montaditos.Clases.ZBaseDatos;
 import es.ateneasystems.uo100montaditos.fragments.Fragment2;
 import es.ateneasystems.uo100montaditos.fragments.Fragment3;
+import es.ateneasystems.uo100montaditos.fragments.FragmentCarta;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -57,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         ndList = (ListView)findViewById(R.id.navdrawerlist);
 
-        final String[] opciones = new String[]{"Carta", "Promos"};
-
+        final String[] opciones = new String[]{"Carta", "Promociones"};
+        //cargarMenu();
 
         ArrayAdapter<String> ndMenuAdapter =
                 new ArrayAdapter<>(this,
@@ -73,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (pos) {
                     case 0:
-                        fragment = new Fragment1();
+                        fragment = new FragmentCarta();
                         break;
                     case 1:
                         fragment = new Fragment2();
@@ -175,5 +183,33 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    /**
+     * Funcion para Cargar el Menu
+     */
+    public void cargarMenu() {
+        //Declaramos Variables
+        JSONArray respuestaJSON; //Donde ira la respuesta
+        ZBaseDatos conectBD = new ZBaseDatos(); //Creamos una variable conectBD con la clase "ZBaseDatos"
+        JSONObject cadena = new JSONObject(); //Creamos un objeto de tipo JSON
+        String respuesta = new String(); //Respuesta para saber si es OK o Error
+        Boolean devovlerRespuesta = new Boolean(false); //Esto es lo que devolvera si es true o false
+        try {
+            cadena.put("tarea", "getTipos");//Le asignamos los datos que necesitemos
+            cadena.put("datos", ' ');//Le asignamos los datos que necesitemos
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        cadena.toString(); //Para obtener la cadena de texto de tipo JSON
+        /**
+         * ENVIAMOS CONSULTA
+         */
+        // Enviamos la consulta y metemos lo recibido dentro de la variable respuesta
+        respuestaJSON = conectBD.consultaSQLARRAY(cadena);
+        //Log.e("DATOS RECIBIDOS:", respuestaJSON.toString());
+        Log.e("REcibido:", String.valueOf(respuestaJSON));
+
+
     }
 }
